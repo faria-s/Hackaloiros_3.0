@@ -61,12 +61,14 @@ function TradingBotVisualizer() {
     }
 
     return (
+        <main>
         <div>
             <h1>Trading Bot Visualizer</h1>
             <p>Saldo: ${balance.toFixed(2)}</p>
             <p>Preço atual do BTC/USD: ${btcPrice.toFixed(2)}</p>
             <p>Ação sugerida: {action}</p>
         </div>
+        </main>
     );
 }
 
