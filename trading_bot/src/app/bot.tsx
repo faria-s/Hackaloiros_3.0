@@ -1,3 +1,5 @@
+"use client"; // This is a client component 👈🏽
+
 import React, { useState, useEffect } from 'react';
 import fetch from 'node-fetch';
 
