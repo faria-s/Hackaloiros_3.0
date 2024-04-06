@@ -21,7 +21,7 @@ function TradingBotVisualizer() {
             } catch (error) {
                 console.error('Erro ao obter os preços da API: ', error);
             }
-        }, 10000); // Atualizar a cada 10 segundos
+        }, 3000); // Atualizar a cada 3 segundos
     
         return () => clearInterval(interval);
     }, []);
