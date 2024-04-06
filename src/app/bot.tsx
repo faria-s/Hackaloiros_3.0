@@ -1,11 +1,12 @@
 "use client"; // This is a client component 👈🏽
 
 import React, { useState, useEffect } from 'react';
+import TickerData from './api'
 import fetch from 'node-fetch';
 import fetchTickerData from './api'
 
 function TradingBotVisualizer() {
-    const [balance, setBalance] = useState(1000);
+    const [balance, setBalance] = useState(1000);   
     const [btcPrice, setBtcPrice] = useState(0);
     const [action, setAction] = useState('manter');
 
@@ -14,9 +15,8 @@ function TradingBotVisualizer() {
             try {
                 const data = await fetchTickerData();
                 console.log(data); // Adicionando uma instrução de console para verificar os dados
-                const { bid, ask } = data;
-                setBtcPrice((bid + ask) / 2); // Usar a média entre bid e ask como preço
-                const newAction = await tradingBot(bid, ask);
+                setBtcPrice((data.bid + data.ask) / 2); // Usar a média entre bid e ask como preço
+                const newAction = await tradingBot(data.bid, data.ask);
                 setAction(newAction);
             } catch (error) {
                 console.error('Erro ao obter os preços da API: ', error);

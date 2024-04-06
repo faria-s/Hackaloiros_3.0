@@ -6,11 +6,19 @@ import fetch from 'node-fetch';
 interface TickerData {
   bid: number;
   ask: number;
+  currency: string;
 }
 
 export default async function fetchTickerData(): Promise<TickerData> {
   const response = await fetch('https://api.uphold.com/v0/ticker/BTCUSD');
   console.log(response);
-  const data = await response.json();
-  return data as TickerData;
+  const responseData : any = await response.json();
+
+  const tickerData: TickerData = {
+    bid:  parseFloat(responseData.bid),
+    ask: parseFloat(responseData.ask),
+    currency: responseData.currency
+  };
+
+  return tickerData; 
 }
