@@ -14,8 +14,8 @@ export interface PriceData {
 function transformKlineData(data: any[]): PriceData[] {
     const result: PriceData[] = [];
 
-    for (const kline of data) {
-        const [openTime, open, high, low, close] = kline;
+    for (let i = 0; i < Math.min(data.length, 26); i++) {
+        const [openTime, open, high, low, close] = data[i];
         result.push({
             open: parseFloat(open),
             high: parseFloat(high),
@@ -26,6 +26,7 @@ function transformKlineData(data: any[]): PriceData[] {
 
     return result;
 }
+
 
 export async function fetchBinanceData() {
     const symbol = 'BTCUSDT';

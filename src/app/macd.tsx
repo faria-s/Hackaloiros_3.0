@@ -4,7 +4,7 @@ import {PriceData} from './coingeckoapi';
 
 
 export function calculate(data: PriceData[]) {
-    const closePrices = data.map(entry => entry.price);
+    const closePrices = data.map(entry => entry.close);
     const macdLine = calculateMACD(closePrices);
     const signalLine = calculateSignalLine(macdLine);
     const signals = analyzeMACD(macdLine, signalLine);
