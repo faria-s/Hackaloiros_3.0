@@ -70,7 +70,7 @@ function TradingBotVisualizer() {
             }
         } catch (error) {
             console.error('Erro ao executar o trading bot: ', error);
-            return 'manter';
+            return 'Manter';
         }
     }*/
 

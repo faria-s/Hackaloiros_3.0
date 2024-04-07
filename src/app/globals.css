@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer base {
 @font-face {
-  font-family: 'Kode';
+  font-family: 'Kdam';
   src: url("/fonts/KodeMono-VariableFont_wght.ttf") format('truetype');
+  font-weight: bold;
 }
 
 :root {
@@ -22,6 +23,7 @@
 }
 
 body {
+  font-family: 'Kdam', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -35,4 +37,5 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
 }
