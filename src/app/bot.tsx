@@ -66,30 +66,6 @@ function TradingBotVisualizer() {
     
 
     return (
-        <div className='pt-50 w-80 justify-center mx-auto'>
-            <h1 className=' text-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>Trading Bot Visualizer</h1>
-            <img className="w-full py-10" src="bug.png" alt="Bug Image" />
-            <p className=' text-center font-mono text-sm'>Saldo: ${balance.toFixed(2)}</p>
-            {loading ? ( 
-                <div className="flex justify-center items-center">
-                    <TailSpin
-                        height={80}
-                        width={80}
-                        color="#FFFFFF"
-                        ariaLabel="tail-spin-loading"
-                        radius={1}
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                        visible={true}
-                    />
-                </div>
-            ) : (
-                <>
-                    <p className='text-center font-mono text-sm'>Preço atual do BTC/USD: ${btcPrice.toFixed(2)}</p>
-                    <p className='text-center font-mono text-sm'>Ação sugerida: {action}</p>
-                </>
-            )}
-        </div>
     );
 }
 
